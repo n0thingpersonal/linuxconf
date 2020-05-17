@@ -1,0 +1,10 @@
+Web browsers extentions
+
+Firefox:
+	- user agent switcher
+		https://addons.mozilla.org/en-US/firefox/addon/user-agent-string-switcher/
+
+
+Chrome:
+	- user agent switcher
+		https://chrome.google.com/webstore/detail/user-agent-switcher-and-m/bhchdcejhohfmigjafbampogmaanbfkg

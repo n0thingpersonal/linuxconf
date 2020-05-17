@@ -1,9 +1,9 @@
 #!/bin/bash
 
-CURRENTUSER=$USER
+CURRENTUSER='casual'
 
 function configurePATH {
-	echo PATH=${PATH}:/home/${CURRENTUSER}/.local/bin:/home/${CURRENTUSER}/go/bin >> /home/${CURRENTUSER}/.bashrc
+	echo PATH='$PATH':/home/${CURRENTUSER}/.local/bin:/home/${CURRENTUSER}/go/bin >> /home/${CURRENTUSER}/.bashrc
 }
 
 function installSublime {
@@ -36,7 +36,7 @@ function installWfuzz {
 
 function getWordLists {
 	[[ ! -d /opt/words ]] && sudo mkdir /opt/words
-	[[ ! -d /opt/words ]] && sudo chown ${CURRENTUSER}. /opt/words
+	sudo chown "${CURRENTUSER}:${CURRENTUSER}" /opt/words
 	cd /opt/words
 	[[ ! -d /opt/words/SecLists ]] && git clone https://github.com/danielmiessler/SecLists.git
 	[[ ! -d /opt/words/fuzzdb ]] && git clone https://github.com/fuzzdb-project/fuzzdb.git
@@ -60,15 +60,14 @@ sudo apt install -y \
 	golang \
 	forensics-all \
 	libimage-exiftool-perl \
-	ipython \
 	ipython3 \
-	python-pip \
 	python3-pip \
 	python3-venv \
 	nmap \
 	ncat \
 	whatweb \
-	keepassx
+	keepassx \
+	vlc
 
 sudo usermod -a -G wireshark ${CURRENTUSER}
 sudo usermod -a -G docker ${CURRENTUSER}
